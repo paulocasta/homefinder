@@ -5,7 +5,9 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.math.BigDecimal;
@@ -17,9 +19,10 @@ import java.sql.Date;
 public class PropertyDetailEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToOne
+    @MapsId
     private PropertyEntity propertyEntity;
     @Column(name = "bathroom", nullable = false)
     private Integer bathroom;
