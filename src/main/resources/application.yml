@@ -6,9 +6,9 @@ spring:
     driver-class-name: org.postgresql.Driver
     type: com.zaxxer.hikari.HikariDataSource
     name: home_finder
-    password: postgres
+    username: bsmx
+    password: bsmx@2016
     url: jdbc:postgresql://localhost:5432/home_finder
-    username: postgres
     hikari:
       maximum-pool-size: 10
       idle-timeout: 300000
@@ -22,8 +22,6 @@ spring:
     hibernate:
       ddl-auto: update
     show_sql: false
-  liquibase:
-    change-log: classpath:liquibase/master.xml
 logging:
   level:
     org.springframework: INFO
