@@ -1,12 +1,15 @@
 package com.homefinder.entity;
 
 import com.homefinder.domain.PropertyType;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name = "property")
 public class PropertyEntity {
@@ -22,7 +25,7 @@ public class PropertyEntity {
     @Enumerated(EnumType.STRING)
     private PropertyType propertyTypeType;
     @Column(name = "is_available")
-    private boolean isAvailable;
+    private boolean available;
     @Column(name = "date_created", nullable = false)
     private Date dateCreated;
 }
